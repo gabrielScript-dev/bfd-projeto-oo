@@ -1,26 +1,47 @@
-# Criação de Class Escritor
-class escritor():
-
-##Construtor da Classe ou Inicializacao dos meus atributos
-    def __init__(self,nome):
-        self.nome = nome
-    def __str__(self): # __str__ é usado para definir como o objeto será exibido como texto, quando for usarmos o print.
-        return self.nome # O return é para retornar apenas o nome
+class Escritor:
+    def __init__(self, nome, email, descricao):
+        self.__nome = nome
+        self.__email = email
+        self.__descricao = descricao
     
-#Criação de Class Livro    
-class livro():
+        
+    @property
+    def nome(self):
+        return self.__nome
+        
+    @property
+    def email(self):
+        return self.__email
+        
+    @property
+    def descricao(self):
+        return self.__descricao
+        
 
-#Construtor da Classe ou Inicializacao dos meus atributos  
-    def __init__(self,titulo,ano):
-        self.titulo = titulo
-        self.ano = ano
-      
- #Como o objeto sera exibido       
-    def __str__(self):
-        return f"'{self.titulo}' ({self.ano})"
-
-#Criando o objeto ou instancia    
-escritor1 = escritor('Leonardo')  
-livros = livro('a baleia branca', 2021)
-
-print(f'temos o Escritor: {escritor1}, com sua obra {livros}')
+class Livro:
+    def __init__(self, nome, ano, escritor):
+        self.__nome = nome
+        self.__ano = ano
+        self.__escritor = escritor
+        
+    def exibir_dados(self):
+        return f'''
+            NOME DO LIVRO: {self.nome}
+            ANO: {self.ano}
+            --
+            ESCRITOR: {self.escritor.nome}
+            --
+            \n\n
+        '''
+            
+    @property
+    def nome(self):
+        return self.__nome
+        
+    @property
+    def ano(self):
+        return self.__ano
+        
+    @property
+    def escritor(self):
+        return self.__escritor
