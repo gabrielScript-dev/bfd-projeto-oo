@@ -16,7 +16,7 @@ class View():
 
         return menu
         
-    def exibir_menu(self):
+    def view_exibir_menu(self):
         
         system('cls||clear')
         
@@ -57,6 +57,22 @@ class View():
         }
         
         return escritor
+    
+    def view_buscar_livro(self):
+        
+        system('cls||clear')
+        
+        nome_livro = input('Informe o nome do livro: ').strip()
+        
+        return {'nome': nome_livro}
+    
+    def view_excluir_livro(self):
+        
+        system('cls||clear')
+        
+        nome_livro = input('Informe o nome do livro: ').strip()
+        
+        return {'nome': nome_livro}
     
     def exibir_msg(self, response):
         

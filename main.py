@@ -6,7 +6,7 @@ controller = Controller()
 
 
 while True:
-    opcao = view.exibir_menu()
+    opcao = view.view_exibir_menu()
     
     if opcao == '1':
         livro_in = view.view_adicionar_livro()
@@ -17,9 +17,13 @@ while True:
         resposta = controller.adicionar_escritor(escritor_in)
         view.exibir_msg(resposta)
     elif opcao == '3':
-        pass
+        nome_livro_in = view.view_buscar_livro()
+        resposta = controller.buscar_livro(nome_livro_in)
+        view.exibir_msg(resposta)
     elif opcao == '4':
-        pass
+        nome_livro_in = view.view_excluir_livro()
+        resposta = controller.excluir_livro(nome_livro_in)
+        view.exibir_msg(resposta)
     elif opcao == '5':
         resposta = controller.listar_livros()
         view.exibir_msg(resposta)

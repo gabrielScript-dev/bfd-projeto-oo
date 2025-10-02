@@ -19,11 +19,20 @@ class Controller:
             self.__livros.append(livro)
             return {'status': True, 'msg': 'Livro Cadastrado com sucesso!'}
     
-    def buscar_livro(self, nome):
-        pass
+    def buscar_livro(self, livro):
+        nome = livro['nome']
+        for livro in self.__livros:
+            if livro.nome == nome:
+                return {'status': True, 'msg': f'Livro encontrado!\n {livro.exibir_dados()}'}
+        return {'status': False, 'msg': 'Livro não encontrado.', 'data': None}
     
-    def excluir_livro(self, nome):
-        pass
+    def excluir_livro(self, livro):
+        nome = livro['nome']
+        for livro in self.__livros:
+            if livro.nome == nome:
+                self.__livros.remove(livro)
+                return {'status': True, 'msg': 'Livro excluído com sucesso!'}
+        return {'status': False, 'msg': 'Livro não encontrado, exclusão não realizada.'}
     
     def listar_livros(self):
         if len(self.__livros) == 0:

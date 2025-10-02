@@ -26,12 +26,13 @@ class Livro:
         
     def exibir_dados(self):
         return f'''
-            NOME DO LIVRO: {self.nome}
-            ANO: {self.ano}
-            --
-            ESCRITOR: {self.escritor.nome}
-            --
-            \n\n
+        NOME DO LIVRO: {self.nome}
+        ANO: {self.ano}
+        --
+        ESCRITOR: {self.escritor.nome}
+        EMAIL: {self.escritor.email}
+        --
+            \n
         '''
             
     @property
